@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<form action="...." method="post">
+		<label for="RegName">Your Name</label><input type="text" name="RegName" id="RegName" required>
+		<label for="RegAccount">Your Account Name</label><input type="text" name="RegAccount" id="RegAccount" required>
+		<label for="">Your Password</label><input type="password" name="RegPW" id="RegPW" required>
+		<label for="">ReEnter Your Password</label><input type="password" name="RegPWRe" id="RegPWRe" required>
+		<input type="submit" value="Registered" onclick="Registered();">
+	</form>
+	<form action="...." method="post">
+			<label for="LoginName">Your Name</label><input type="text" name="LogName" id="LogName" required>
+			<label for="LoginAccount">Your Account Name</label><input type="text" name="LogAccount" id="LogAccount" required>
+			<label for="">Your Password</label><input type="password" name="LogPW" id="LogPW" required>
+			<label for="">ReEnter Your Password</label><input type="password" name="LogPWRe" id="LogPWRe" required>
+			<input type="button" value="Logined">	
+	</form>
+	<div>
+		<head>Info</head>
+		<p id="infoMeg"></p>
+	</div>
+	<script>
+		function Registered () {
+			event.preventDefault();
+			var RegName = document.querySelector('#RegName').value
+			var RegAccount = document.querySelector('#RegAccount').value
+			var RegPW1 = document.querySelector('#RegPW').value
+			var RegPW2 = document.querySelector('#RegPWRe').value
+    	if (RegPW1 === RegPW2) {
+				var xmlhttp = new XMLHttpRequest();
+  			xmlhttp.onreadystatechange = function()	{
+    			if (xmlhttp.readyState == 4 && xmlhttp.status == 200)	{
+      			//
+    			}}
+  			xmlhttp.open("POST","...",true);
+  			xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				xmlhttp.send("name=" + name + "&account=" + account + "&password=" + password);
+			}
+			else {
+				alert('Ｅrror Password')
+			}}
+	</script>
+</body>
+</html>
